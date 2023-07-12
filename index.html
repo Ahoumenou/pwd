@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Js Form-Bindings</title>
+</head>
+
+<body>
+
+    
+    
+    
+    <div id="app">
+      <input type="text" placeholder="Firstname">
+      <input type="text" placeholder="Lastname">
+      <input v-model="pwd" type="password" placeholder="Type here">
+    <p>Entrez votre Mot de Pass <strong>{{pwd}}</strong></p>
+
+    <!-- <input :value="text" v-on:saveInput = "Mdp" @input="onInput" placeholder="Type here"> -->
+
+    <!--  v-model: synchronise la valeur du champ associé
+         à l'Etat (state) correspondant 
+        -->
+    </div>
+
+
+  <script type="module">
+
+    const inputElement = document.querySelector('input')
+    let textInput = "";
+    inputElement.addEventListener('input', (e) => {
+      textInput = e.target.value;
+      console.log(`${textInput}`);
+    })
+
+
+    import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.esm-browser.min.js'
+
+    createApp({
+      data() {
+        return {
+          text: '',
+          pwd: '',
+        }
+      },
+      methods: {
+        onInput(e) {
+          this.text = e.target.value
+        },
+        // saveInput(e){
+        //   this.pwd = e.target.value
+
+        // }
+
+      }
+    }).mount('#app')
+  </script>
+
+</body>
+
+</html>

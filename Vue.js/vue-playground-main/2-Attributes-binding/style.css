@@ -1,0 +1,15 @@
+.title {
+  color: red;
+}
+
+.italic{
+  width: fit-content;
+  font-style: italic;
+}
+.aqua{
+  background-color: aqua;
+
+}
+.fw-400{
+  font-weight: 600;
+}
